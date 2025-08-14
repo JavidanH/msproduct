@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public enum ErrorMessage {
     PRODUCT_NOT_FOUND ("Product not found with id: %s");
+   // INSUFFICIENT_QUANTITY ("Insufficient quntity for product with id %s");
 
     private final String message;
 }

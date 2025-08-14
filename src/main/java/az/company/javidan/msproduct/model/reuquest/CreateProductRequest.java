@@ -1,5 +1,6 @@
 package az.company.javidan.msproduct.model.reuquest;
 
+import az.company.javidan.msproduct.model.constants.ApplicationConstants;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -13,12 +14,15 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class CreateProductRequest {
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = ApplicationConstants.NAME_IS_REQUIRED)
     private String name;
-    @NotBlank(message = "Description is required")
+
+    @NotBlank(message = ApplicationConstants.DESCRIPTION_IS_REQUIRED)
     private String description;
-    @NotNull(message = "Price is required")
+
+    @NotNull(message = ApplicationConstants.PRICE_IS_REQUIRED)
     private BigDecimal price;
-    @NotNull(message = "Quantity is required")
+
+    @NotNull(message = ApplicationConstants.QUANTITY_IS_REQUIRED)
     private Integer quantity;
 }

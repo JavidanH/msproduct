@@ -22,4 +22,11 @@ public class ErrorHandler {
                 .message("Unexpected error occurred")
                 .build();
     }
+
+    @ExceptionHandler(InsufficientQuantityException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handle (InsufficientQuantityException exception){
+        return ErrorResponse.builder()
+                .message(exception.getMessage()).build();
+    }
 }
